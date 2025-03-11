@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        div {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus, select:focus {
+            border-color: #007BFF;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h2>Add New Employee</h2>
+    <form action="/saveEmployee" th:object="${employee}" method="post">
+        <div>
+            <label>Employee NAME: </label>
+            <input type="text" th:field="*{name}">
+        </div>
+        
+        <div>
+            <label>Employee Address: </label>
+            <input type="text" th:field="*{address}">
+        </div>
+        
+        <div>
+            <label>Employee Salary: </label>
+            <input type="text" th:field="*{salary}">
+        </div>
+        
+        <div>
+            <label>Employee Department: </label>
+            <select th:field="*{department}"> 
+                <option th:each="department:${departments}" th:value="${department}" th:text="${department.name}"></option>
+            </select>
+        </div>
+        
+        <div>
+            <button type="submit">Save</button>
+        </div>
+    </form>
+</body>
+</html>

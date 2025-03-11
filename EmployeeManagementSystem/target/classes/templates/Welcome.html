@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .link-button {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 15px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .link-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px); /* Slight lift effect */
+        }
+
+        .link-button:active {
+            background-color: #004494; /* Darker color on click */
+            transform: translateY(0); /* Reset position */
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em; /* Slightly smaller on mobile */
+            }
+
+            .link-button {
+                padding: 10px 20px; /* Smaller padding on mobile */
+                font-size: 1em; /* Adjust font size */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to Employee Management System</h1>
+
+    <div class="container">
+        <a href="/allemployees" class="link-button">View Employees</a>
+        <a href="/alldepartments" class="link-button">View Departments</a>
+    </div>
+
+</body>
+</html>
